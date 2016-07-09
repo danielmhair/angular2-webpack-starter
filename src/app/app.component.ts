@@ -14,6 +14,9 @@ import { AppState } from './app.service';
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
     './app.style.css',
+    './font-size.css',
+    './margin-padding.css',
+    './width.css',
   ],
   template: `
     <md-content>
