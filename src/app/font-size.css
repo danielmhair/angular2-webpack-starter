@@ -1,52 +1,64 @@
+.font-0em-sm {
+  font-size: 0.25em !important;
+}
+
+.font-0em-md {
+  font-size: 0.5em !important;
+}
+
+.font-0em-lg {
+  font-size: 0.75em !important;
+}
+
 .font-1em {
-  font-size: 1em;
+  font-size: 1em !important;
 }
 
 .font-1em-sm {
-  font-size: 1.25em;
+  font-size: 1.25em !important;
 }
 
 .font-1em-md {
-  font-size: 1.5em;
+  font-size: 1.5em !important;
 }
 
 .font-1em-lg {
-  font-size: 1.75em;
+  font-size: 1.75em !important;
 }
 
 .font-2em {
-  font-size: 2em;
+  font-size: 2em !important;
 }
 
 .font-2em-sm {
-  font-size: 2.25em;
+  font-size: 2.25em !important;
 }
 
 .font-2em-md {
-  font-size: 2.5em;
+  font-size: 2.5em !important;
 }
 
 .font-2em-lg {
-  font-size: 2.75em;
+  font-size: 2.75em !important;
 }
 
 
 .font-3em {
-  font-size: 3em;
+  font-size: 3em !important;
 }
 
 .font-3em-sm {
-  font-size: 3.25em;
+  font-size: 3.25em !important;
 }
 
 .font-3em-md {
-  font-size: 3.5em;
+  font-size: 3.5em !important;
 }
 
 .font-3em-lg {
-  font-size: 3.75em;
+  font-size: 3.75em !important;
 }
 
 .font-4em {
-  font-size: 4em;
+  font-size: 4em !important;
 }

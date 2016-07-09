@@ -1,9 +1,6 @@
-a.nav-link.router-link-active {
-  padding-left: 30px;
-  padding-right: 30px;
-  background: white;
+a.nav-link.active {
+  background-color: rgba(255,255,255,0.75);
   color: black !important;
-  border-radius: 3px;
 }
 
 a.nav-link {

@@ -2,8 +2,8 @@
  * Angular 2 decorators and services
  */
 import { Component, ViewEncapsulation } from '@angular/core';
-
-import { AppState } from './app.service';
+import { Link } from "./bootstrap-navbar/Link";
+import { BootstrapNavbarComponent } from "./bootstrap-navbar/bootstrap-navbar.component";
 
 /*
  * App Component
@@ -17,31 +17,15 @@ import { AppState } from './app.service';
     './font-size.css',
     './margin-padding.css',
     './width.css',
+    './styles.css',
   ],
+  directives: [BootstrapNavbarComponent],
   template: `
     <md-content>
-      <md-toolbar color="primary">
-          <span>{{ name }}</span>
-          <span class="fill"></span>
-          <a md-button [routerLink]=" ['./'] ">
-            Home
-          </a>
-          <a md-button [routerLink]=" ['./about'] ">
-            About
-          </a>
-          <a md-button [routerLink]=" ['./search'] ">
-            Search
-          </a>
-      </md-toolbar>
+      <bootstrap-navbar [leftLinks]="leftLinks" [rightLinks]="rightLinks" [brand]="brand"></bootstrap-navbar>
       <md-progress-bar mode="indeterminate" color="primary" *ngIf="loading"></md-progress-bar>
-
       <router-outlet></router-outlet>
-
-      <footer>
-        <img [src]="angularclassLogo" width="6%">
-        <span id="footerText">WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a></span>
-      </footer>
-      </md-content>
+    </md-content>
   `
 })
 export class App {
@@ -50,21 +34,22 @@ export class App {
   name = 'Angular 2 Webpack Starter';
   url = 'https://twitter.com/AngularClass';
 
-  constructor(
-    public appState: AppState) {
+  rightLinks: Link[] = [
+    new Link("Basic Search", "glyphicon glyphicon-search", null, '/search/basic', {}),
+    new Link("Advanced Search", "glyphicon glyphicon-search", null, '/search/advanced', {}),
+    new Link("BarcodeSearch", "glyphicon glyphicon-search", null, '/search/barcode', {}),
+  ];
 
-  }
+  leftLinks: Link[] = [
+    new Link("About", "glyphicon glyphicon-user", null, '/about', {}),
+  ];
+
+  brand: Link = new Link("Angular 2 Template", "glyphicon glyphicon-dashboard", null, './', {});
+
+  constructor() {}
 
   ngOnInit() {
-    console.log('Initial App State', this.appState.state);
+    console.log('App');
   }
 
 }
-
-/*
- * Please review the https://github.com/AngularClass/angular2-examples/ repo for
- * more angular app examples that you may copy/paste
- * (The examples may not be updated as quickly. Please open an issue on github for us to update it)
- * For help or questions please contact us at @AngularClass on twitter
- * or our chat on Slack at https://AngularClass.com/slack-join
- */

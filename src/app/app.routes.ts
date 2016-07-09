@@ -2,6 +2,9 @@ import { WebpackAsyncRoute } from '@angularclass/webpack-toolkit';
 import { RouterConfig } from '@angular/router';
 import { Home } from './home';
 import { NoContent } from './no-content';
+import { BarcodeSearchComponent } from "./barcode-search";
+import { AdvancedSearchComponent } from "./advanced-search";
+import { BasicSearchComponent } from "./basic-search";
 
 export const routes: RouterConfig = <RouterConfig>[
   { path: '', component: Home },
@@ -9,7 +12,9 @@ export const routes: RouterConfig = <RouterConfig>[
   { path: 'about', component: 'About' },
   // async components with children routes must use WebpackAsyncRoute
   { path: 'detail', component: 'Detail', canActivate: [WebpackAsyncRoute] },
-  { path: 'search', component: 'Search', canActivate: [WebpackAsyncRoute] },
+  { path: 'search/basic', component: BasicSearchComponent, useDefault: true },
+  { path: 'search/advanced', component: AdvancedSearchComponent },
+  { path: 'search/barcode', component: BarcodeSearchComponent },
   { path: '**', component: NoContent },
 ];
 
@@ -21,7 +26,9 @@ export const asyncRoutes: AsyncRoutes = {
   // we have to use the alternative syntax for es6-promise-loader to grab the routes
   'About': require('es6-promise-loader!./about'),
   'Detail': require('es6-promise-loader!./+detail'),
-  'Search': require('es6-promise-loader!./search'),
+  'Basic': require('es6-promise-loader!./basic-search'),
+  'Advanced': require('es6-promise-loader!./advanced-search'),
+  'Barcode': require('es6-promise-loader!./barcode-search'),
 };
 
 
@@ -30,7 +37,9 @@ export const asyncRoutes: AsyncRoutes = {
 export const prefetchRouteCallbacks: Array<IdleCallbacks> = [
   asyncRoutes['About'],
   asyncRoutes['Detail'],
-  asyncRoutes['Search'],
+  asyncRoutes['Basic'],
+  asyncRoutes['Advanced'],
+  asyncRoutes['Barcode'],
    // es6-promise-loader returns a function
 ];
 

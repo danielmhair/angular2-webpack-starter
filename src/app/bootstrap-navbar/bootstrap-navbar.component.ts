@@ -10,4 +10,14 @@ export class BootstrapNavbarComponent {
   @Input() brand: Link;
   @Input() leftLinks: Link[];
   @Input() rightLinks: Link[];
+
+  constructor() {}
+
+  ngOnInit() {
+    console.log(this.rightLinks);
+  }
+
+  test() {
+    this.ngOnInit();
+  }
 }
