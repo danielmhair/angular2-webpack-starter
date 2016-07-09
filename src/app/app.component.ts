@@ -13,29 +13,26 @@ import { AppState } from './app.service';
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
-    './app.style.css'
+    './app.style.css',
   ],
   template: `
     <md-content>
       <md-toolbar color="primary">
           <span>{{ name }}</span>
           <span class="fill"></span>
-          <a md-button router-active [routerLink]=" ['./'] ">
-            Index
-          </a>
-          <a md-button router-active [routerLink]=" ['./home'] ">
+          <a md-button [routerLink]=" ['./'] ">
             Home
           </a>
-          <a md-button router-active [routerLink]=" ['./about'] ">
+          <a md-button [routerLink]=" ['./about'] ">
             About
           </a>
+          <a md-button [routerLink]=" ['./search'] ">
+            Search
+          </a>
       </md-toolbar>
-
       <md-progress-bar mode="indeterminate" color="primary" *ngIf="loading"></md-progress-bar>
 
       <router-outlet></router-outlet>
-
-      <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
 
       <footer>
         <img [src]="angularclassLogo" width="6%">

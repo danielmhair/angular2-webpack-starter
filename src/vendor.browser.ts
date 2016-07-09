@@ -20,6 +20,10 @@ import '@angularclass/request-idle-callback';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 
+//Bootstrap
+import 'bootstrap-loader';
+import 'jquery';
+
 // Angular 2 Material 2
 import '@angular2-material/button';
 import '@angular2-material/card';
